@@ -36,17 +36,15 @@ public class SendgridWebApiV3 {
     }
 
     public SendgridMail newMailFromTo(String from, String fromName, String recipient, String recipientName,
-            String subject, String message) throws JSONException {
+            String subject, String textMessage, String htmlMessage) throws JSONException {
         SendgridMail sendgridMail = new SendgridMail(this.apiKey, from, fromName);
         sendgridMail.addRecipient(recipient, recipientName, TO, subject);
-        sendgridMail.addHTMLTextMessage(message);;
-        return sendgridMail;
-    }
-    
-    public SendgridMail newMailTo(String recipient, String subject, String message) throws JSONException {
-        SendgridMail sendgridMail = new SendgridMail(this.apiKey, defaultFrom, defaultFromName);
-        sendgridMail.addRecipient(recipient, null, TO, subject);
-        sendgridMail.addHTMLTextMessage(message);;
+        if (textMessage != null) {
+            sendgridMail.addTextMessage(textMessage);
+        }
+        if (htmlMessage != null) {
+            sendgridMail.addHTMLMessage(htmlMessage);;
+        }
         return sendgridMail;
     }
 

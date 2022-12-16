@@ -18,6 +18,8 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import systems.dmx.core.JSONEnabled;
 
+import javax.activation.MimeType;
+
 /**
  * 
  * @author Malte Reißig
@@ -48,9 +50,13 @@ public class SendgridMail implements JSONEnabled {
     public void addRecipient(String recipient, String recipientName, String type, String subject) throws JSONException {
         addPersonalizations(recipient, recipientName, type, subject, mail);
     }
-    
-    public void addHTMLTextMessage(String textMessage) throws JSONException {
-        addContent("text/html", textMessage, mail);
+
+    public void addHTMLMessage(String htmlMessage) throws JSONException {
+        addContent("text/html", htmlMessage, mail);
+    }
+
+    public void addTextMessage(String textMessage) throws JSONException {
+        addContent("text/plain", textMessage, mail);
     }
 
     public void send() {

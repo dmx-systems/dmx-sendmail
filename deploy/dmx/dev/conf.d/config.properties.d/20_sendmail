@@ -11,5 +11,6 @@ dmx.sendmail.smtp_port = 1025
 dmx.sendmail.smtp_security =
 dmx.sendmail.smtp_debug = true
 
-dmx.sendmail.greeting_message = Hello World!
+dmx.sendmail.greeting_message = Salut le monde!
+dmx.sendmail.greeting_html_message = <html><body><h1>Hello World!</h1></body></html>
 dmx.sendmail.greeting_enabled = true

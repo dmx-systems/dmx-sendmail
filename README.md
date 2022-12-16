@@ -20,6 +20,7 @@ dmx.sendmail.type = smtp | sendgrid
 dmx.sendmail.greeting_enabled = false | true
 #dmx.sendmail.greeting_subject = <The subject for the greeting email>
 #dmx.sendmail.greeting_message = <The message for the greeting email>
+#dmx.sendmail.greeting_html_message = <The HTML message for the greeting email>
 
 ## Sendmail SMTP Configuration
 dmx.sendmail.smtp_host = localhost | ip/hostname
@@ -48,8 +49,9 @@ All third party components incorporated into the DMX Sendmail Software are licen
 
 ## Release Notes
 
-**2.0.3**, TBD
+**2.1.0**, TBD
 
+- API change: Plain text and HTML message body can be specified separately
 - Add greeting enabled and message configuration option
 
 **2.0.2**, Jun 30, 2021
